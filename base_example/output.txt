@@ -1,0 +1,26 @@
+r1: hello
+d: hello
+text: nihao, text_two: hello
+rd: 0x6000013f82e0, re: 0x6000013f82e0, rf: 0x6000013f82e0
+s str_test fn: hello, world
+item: 1
+username: hello, email: start
+username: hello, email: end
+active: Yes， active
+v: [51, 150, 70]
+test_vec: [Int(1), Float(2.0), Text("hello")]
+------ string-demo  ------
+a: hello
+name: dang dang
+c: helloworld, b: world
+key: kangkang, item: 23
+key: dangdang, item: 24
+d.x = 5
+area_text Area is 600 hello
+get_values 30 10 10
+--- Lifecycle Demo ---
+r: 5
+The longest string is world
+-------- grep.rs ---------
+Are you nobody, too?
+How dreary to be somebody!

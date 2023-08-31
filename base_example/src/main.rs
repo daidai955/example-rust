@@ -1,9 +1,15 @@
 /// mut reference can only have one at a time
 /// if has immutable reference, can't get mutable reference or vice versa, ex: below
 use std::rc::Rc;
+
 pub mod struct_demo;
 pub mod vec_demo;
 pub mod string_demo;
+pub mod error_demo;
+pub mod trait_demo;
+pub mod lifecycle_demo;
+pub mod grep;
+pub mod grep_utils;
 
 fn main() {
     let mut s = String::from("hello");
@@ -32,7 +38,11 @@ fn main() {
     str_test("world");
     struct_demo::run();
     vec_demo::run();
-    string_demo::run()
+    string_demo::run();
+    error_demo::run();
+    trait_demo::run();
+    lifecycle_demo::run();
+    grep::run()
 }
 
 fn rc() {
