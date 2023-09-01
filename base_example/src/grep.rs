@@ -1,12 +1,11 @@
+use crate::grep_utils::{read, Config};
 use std::env;
 use std::process;
-use crate::grep_utils::{Config,read};
 
 pub fn run() {
     println!("-------- grep.rs ---------");
 
-    let args: Vec<String> = env::args().collect();
-    let config = Config::build(&args).unwrap_or_else(|err| {
+    let config = Config::build(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {}", err);
         process::exit(1);
     });

@@ -4,6 +4,7 @@ pub mod closures;
 pub mod error_demo;
 pub mod grep;
 pub mod grep_utils;
+pub mod iter_demo;
 pub mod lifecycle_demo;
 pub mod string_demo;
 pub mod struct_demo;
@@ -43,6 +44,7 @@ fn main() {
     lifecycle_demo::run();
     grep::run();
     closures::run();
+    iter_demo::run();
 }
 
 fn rc() {
