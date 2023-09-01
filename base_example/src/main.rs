@@ -1,15 +1,14 @@
-/// mut reference can only have one at a time
-/// if has immutable reference, can't get mutable reference or vice versa, ex: below
 use std::rc::Rc;
 
-pub mod struct_demo;
-pub mod vec_demo;
-pub mod string_demo;
+pub mod closures;
 pub mod error_demo;
-pub mod trait_demo;
-pub mod lifecycle_demo;
 pub mod grep;
 pub mod grep_utils;
+pub mod lifecycle_demo;
+pub mod string_demo;
+pub mod struct_demo;
+pub mod trait_demo;
+pub mod vec_demo;
 
 fn main() {
     let mut s = String::from("hello");
@@ -42,7 +41,8 @@ fn main() {
     error_demo::run();
     trait_demo::run();
     lifecycle_demo::run();
-    grep::run()
+    grep::run();
+    closures::run();
 }
 
 fn rc() {
@@ -64,23 +64,23 @@ fn str_test(l: &str) {
     assert_eq!(slice, [2, 3]);
 }
 
-// 悬垂引用: 等内存被回收后，引用的内存地址变量还存在，但是内存已经被回收了
-// en: dangling reference
-// fn dangle() -> &String {
-//     let s = String::from("hello");
-//     &s
-// }
-
-// fn first_word(s: &String) -> usize {
-//     let bytes = s.as_bytes();
-
-//     for (i, &item) in bytes.iter().enumerate() {
-//         if item == b' ' {
-//             return i;
-//         }
-//     }
-//     s.len()
-// }
-
-// 如何让struct等具有copy trait, 使得可以在函数中使用, 但是不会被drop
-// en: how to make struct have copy trait, so that can use in function, but not drop
+// // 悬垂引用: 等内存被回收后，引用的内存地址变量还存在，但是内存已经被回收了
+// // en: dangling reference
+// // fn dangle() -> &String {
+// //     let s = String::from("hello");
+// //     &s
+// // }
+//
+// // fn first_word(s: &String) -> usize {
+// //     let bytes = s.as_bytes();
+//
+// //     for (i, &item) in bytes.iter().enumerate() {
+// //         if item == b' ' {
+// //             return i;
+// //         }
+// //     }
+// //     s.len()
+// // }
+//
+// // 如何让struct等具有copy trait, 使得可以在函数中使用, 但是不会被drop
+// // en: how to make struct have copy trait, so that can use in function, but not drop
