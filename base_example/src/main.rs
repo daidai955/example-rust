@@ -1,11 +1,15 @@
 use std::rc::Rc;
 
+pub mod channel;
 pub mod closures;
+pub mod deref_demo;
+pub mod drop_demo;
 pub mod error_demo;
 pub mod grep;
 pub mod grep_utils;
 pub mod iter_demo;
 pub mod lifecycle_demo;
+pub mod rc_demo;
 pub mod string_demo;
 pub mod struct_demo;
 pub mod trait_demo;
@@ -45,6 +49,10 @@ fn main() {
     grep::run();
     closures::run();
     iter_demo::run();
+    deref_demo::run();
+    drop_demo::run();
+    rc_demo::run();
+    channel::run();
 }
 
 fn rc() {
