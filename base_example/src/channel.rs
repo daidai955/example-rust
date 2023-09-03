@@ -5,36 +5,36 @@ use std::time::Duration;
 pub fn run() {
     println!("---  channel ----");
 
-    let (tx, rx) = mpsc::channel();
-    let tx1 = tx.clone();
+    // let (tx, rx) = mpsc::channel();
+    // let tx1 = tx.clone();
 
-    thread::spawn(move || {
-        let vals = vec![
-            String::from("hi"),
-            String::from("from"),
-            String::from("the"),
-            String::from("thread"),
-        ];
+    // thread::spawn(move || {
+    //     let vals = vec![
+    //         String::from("hi"),
+    //         String::from("from"),
+    //         String::from("the"),
+    //         String::from("thread"),
+    //     ];
 
-        for val in vals {
-            tx.send(val).unwrap();
-            thread::sleep(Duration::from_secs(1));
-        }
+    //     for val in vals {
+    //         tx.send(val).unwrap();
+    //         thread::sleep(Duration::from_secs(1));
+    //     }
 
-        let vals2 = vec![
-            String::from("more"),
-            String::from("messages"),
-            String::from("for"),
-            String::from("you"),
-        ];
+    //     let vals2 = vec![
+    //         String::from("more"),
+    //         String::from("messages"),
+    //         String::from("for"),
+    //         String::from("you"),
+    //     ];
 
-        for val in vals2 {
-            tx1.send(val).unwrap();
-            thread::sleep(Duration::from_secs(1));
-        }
-    });
+    //     for val in vals2 {
+    //         tx1.send(val).unwrap();
+    //         thread::sleep(Duration::from_secs(1));
+    //     }
+    // });
 
-    for received in rx {
-        println!("Got: {}", received);
-    }
+    // for received in rx {
+    //     println!("Got: {}", received);
+    // }
 }
