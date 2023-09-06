@@ -9,6 +9,8 @@ pub mod grep;
 pub mod grep_utils;
 pub mod iter_demo;
 pub mod lifecycle_demo;
+pub mod o_o_demo;
+pub mod pattern;
 pub mod rc_demo;
 pub mod shared_state;
 pub mod string_demo;
@@ -16,6 +18,7 @@ pub mod struct_demo;
 pub mod trait_demo;
 pub mod trait_objects;
 pub mod vec_demo;
+pub mod lock;
 
 fn main() {
     let mut s = String::from("hello");
@@ -57,6 +60,9 @@ fn main() {
     channel::run();
     shared_state::run();
     trait_objects::run();
+    o_o_demo::run();
+    pattern::run();
+    lock::run();
 }
 
 fn rc() {
