@@ -1,12 +1,13 @@
 [package]
-name = "dai-wasm"
+name = "server"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[[bin]]
-name = "example"
-path = "example/hello.rs"
 
 [dependencies]
+actix-multipart = "0.6.1"
+actix-web = "4.4.0"
+image = "0.24.7"
+serde = { version = "1.0.130", features = ["derive"] }
